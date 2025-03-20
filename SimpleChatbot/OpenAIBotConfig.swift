@@ -60,7 +60,7 @@ class OpenAIBotConfig {
                                 "type": .string("near_field")
                             ]),
                             "turn_detection": .object([
-                                "type": .string("server_vad")
+                                "type": .string("semantic_vad")
                             ]),
                             "tools": .array(tools)
                         ])),
