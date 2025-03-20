@@ -1,6 +1,6 @@
-# Demo: Pipecat iOS SDK with OpenAI Realtime Transport
+# Demo: Pipecat iOS SDK with OpenAI Realtime WebRTC Transport
 
-Basic demo using the [Pipecat iOS SDK with OpenAI Realtime Transport](https://github.com/pipecat-ai/pipecat-client-ios-openai-realtime).
+Basic demo using the [Pipecat iOS SDK with OpenAI Realtime Transport](https://github.com/pipecat-ai/pipecat-client-ios-openai-realtime-webrtc).
 
 If you're looking for a demo that shows how to use the [Pipecat iOS SDK with Daily WebRTC Transport](https://github.com/pipecat-ai/pipecat-client-ios-daily) to talk to a [Pipecat](https://github.com/pipecat-ai/pipecat)-powered agent running server side, check out [this demo instead](https://github.com/pipecat-ai/pipecat/tree/main/examples/simple-chatbot/examples/ios).
 

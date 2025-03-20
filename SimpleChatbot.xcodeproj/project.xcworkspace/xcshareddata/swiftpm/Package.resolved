@@ -1,0 +1,33 @@
+{
+  "originHash" : "493e79f53a31b4a7a6148fa6f9c45b2de211810bba2046ad61a96169622bd6cb",
+  "pins" : [
+    {
+      "identity" : "pipecat-client-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pipecat-ai/pipecat-client-ios.git",
+      "state" : {
+        "revision" : "96f733910b46a304f902041abd7211ab79cc2849",
+        "version" : "0.3.3"
+      }
+    },
+    {
+      "identity" : "pipecat-client-ios-openai-realtime-webrtc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pipecat-ai/pipecat-client-ios-openai-realtime-webrtc",
+      "state" : {
+        "revision" : "da4ca7b69d5488a9993b4425363036ebf36a2fe9",
+        "version" : "0.0.1"
+      }
+    },
+    {
+      "identity" : "webrtc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stasel/WebRTC",
+      "state" : {
+        "revision" : "5b2eb61cace7d62726b29a38b768b07d6bc55c45",
+        "version" : "134.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
