@@ -46,40 +46,17 @@ class CallContainerModel: ObservableObject {
             return
         }
 
-        let currentSettings = SettingsManager.getSettings()
-        let rtviClientOptions = RTVIClientOptions.init(
-            enableMic: currentSettings.enableMic,
-            enableCam: false,
-            params: .init(config: [
-                .init(
-                    service: "llm",
-                    options: [
-                        .init(name: "api_key", value: .string(openaiAPIKey)),
-                        .init(name: "initial_messages", value: .array([
-                            .object([
-                                "role": .string("user"), // "user" | "system"
-                                "content": .string("Start by introducing yourself.")
-                            ])
-                        ])),
-                        .init(name: "session_config", value: .object([
-                            "instructions": .string("You are Chatbot, a friendly, helpful robot."),
-                            "voice": .string("echo"),
-                            "input_audio_noise_reduction": .object([
-                                "type": .string("near_field")
-                            ]),
-                            "turn_detection": .object([
-                                "type": .string("server_vad")
-                            ])
-                        ]))
-                    ]
-                )
-            ])
-        )
+        let rtviClientOptions = OpenAIBotConfig.createOptions(openaiAPIKey: openaiAPIKey)
         self.rtviClientIOS = RTVIClient.init(
             transport: OpenAIRealtimeTransport.init(options: rtviClientOptions),
             options: rtviClientOptions
         )
         self.rtviClientIOS?.delegate = self
+        
+        // Registering the llm helper, we will need this to handle the function calling
+        let llmHelper = try? self.rtviClientIOS?.registerHelper(service: "llm", helper: LLMHelper.self)
+        llmHelper?.delegate = self
+        
         self.rtviClientIOS?.start() { result in
             switch result {
             case .failure(let error):
@@ -87,7 +64,7 @@ class CallContainerModel: ObservableObject {
                 self.rtviClientIOS = nil
             case .success():
                 // Apply initial mic preference
-                if let selectedMic = currentSettings.selectedMic {
+                if let selectedMic = SettingsManager.getSettings().selectedMic {
                     self.selectMic(MediaDeviceId(id: selectedMic))
                 }
                 // Populate available devices list
@@ -268,6 +245,27 @@ extension CallContainerModel:RTVIClientDelegate, LLMHelperDelegate {
     
     func onBotTTSText(data: BotTTSText) {
         self.appendTextToLiveMessage(fromBot: true, content: data.text)
+    }
+    
+    func onLLMFunctionCall(functionCallData: LLMFunctionCallData, onResult: ((Value) async -> Void)) async {
+        self.handleEvent(eventName: "onLLMFunctionCall", eventValue: functionCallData)
+        if let receivedFunction = ToolsFunctions(rawValue: functionCallData.functionName) {
+            // Use a switch to handle the different enum cases
+            switch receivedFunction {
+            case .getWeatherTool:
+                // Fixed values just for showing the function calling working
+                let weatherResult = Value.object([
+                    "conditions": .string("nice"),
+                    "temperature": .number(75)
+                ])
+                return await onResult(weatherResult)
+            case .endBot:
+                // leaving the meeting
+                await self.disconnect()
+                return await onResult(Value.object([:]))
+            }
+        }
+        await onResult(Value.object(["success":.boolean(false)]))
     }
 
 }

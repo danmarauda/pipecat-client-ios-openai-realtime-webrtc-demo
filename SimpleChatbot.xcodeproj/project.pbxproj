@@ -15,10 +15,12 @@
 		90031FC22C616EE900408370 /* SimpleChatbotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90031FC12C616EE900408370 /* SimpleChatbotUITests.swift */; };
 		90031FC42C616EE900408370 /* SimpleChatbotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90031FC32C616EE900408370 /* SimpleChatbotUITestsLaunchTests.swift */; };
 		90031FDC2C6D5DD700408370 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90031FDB2C6D5DD700408370 /* ToastModifier.swift */; };
+		904C80132D8C49EE0047EA74 /* OpenAIBotConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904C80122D8C49EE0047EA74 /* OpenAIBotConfig.swift */; };
+		904C80162D8C4CFF0047EA74 /* PipecatClientIOSOpenAIRealtimeWebrtc in Frameworks */ = {isa = PBXBuildFile; productRef = 904C80152D8C4CFF0047EA74 /* PipecatClientIOSOpenAIRealtimeWebrtc */; };
+		904C80192D8CA2C00047EA74 /* PipecatClientIOSOpenAIRealtimeWebrtc in Frameworks */ = {isa = PBXBuildFile; productRef = 904C80182D8CA2C00047EA74 /* PipecatClientIOSOpenAIRealtimeWebrtc */; };
 		9053D5462D8AFDD900FD4DC0 /* LiveMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053D5442D8AFDD900FD4DC0 /* LiveMessage.swift */; };
 		9053D5482D8AFE1E00FD4DC0 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053D5472D8AFE1E00FD4DC0 /* ChatView.swift */; };
 		9053D54B2D8B713900FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc in Frameworks */ = {isa = PBXBuildFile; productRef = 9053D54A2D8B713900FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc */; };
-		9053D54E2D8C377F00FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc in Frameworks */ = {isa = PBXBuildFile; productRef = 9053D54D2D8C377F00FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc */; };
 		90ABB98E2C735ED6000D9CC7 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABB98D2C735ED6000D9CC7 /* MeetingView.swift */; };
 		90ABB9932C73820D000D9CC7 /* MicrophoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABB9922C73820D000D9CC7 /* MicrophoneView.swift */; };
 		90ABB9982C738356000D9CC7 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ABB9972C738356000D9CC7 /* CustomColors.swift */; };
@@ -59,6 +61,7 @@
 		90031FC32C616EE900408370 /* SimpleChatbotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleChatbotUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		90031FD62C63FD6A00408370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		90031FDB2C6D5DD700408370 /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
+		904C80122D8C49EE0047EA74 /* OpenAIBotConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIBotConfig.swift; sourceTree = "<group>"; };
 		9053D5442D8AFDD900FD4DC0 /* LiveMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveMessage.swift; sourceTree = "<group>"; };
 		9053D5472D8AFE1E00FD4DC0 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		90ABB98D2C735ED6000D9CC7 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
@@ -76,7 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9053D54E2D8C377F00FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc in Frameworks */,
+				904C80192D8CA2C00047EA74 /* PipecatClientIOSOpenAIRealtimeWebrtc in Frameworks */,
+				904C80162D8C4CFF0047EA74 /* PipecatClientIOSOpenAIRealtimeWebrtc in Frameworks */,
 				9053D54B2D8B713900FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +137,7 @@
 				90031FDD2C6D61E000408370 /* views */,
 				9053D5452D8AFDD900FD4DC0 /* types */,
 				90031FD62C63FD6A00408370 /* Info.plist */,
+				904C80122D8C49EE0047EA74 /* OpenAIBotConfig.swift */,
 				90031FA62C616EE700408370 /* SimpleChatbotApp.swift */,
 				90031FAA2C616EE800408370 /* Assets.xcassets */,
 				90031FAC2C616EE800408370 /* Preview Content */,
@@ -241,7 +246,8 @@
 			name = SimpleChatbot;
 			packageProductDependencies = (
 				9053D54A2D8B713900FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc */,
-				9053D54D2D8C377F00FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc */,
+				904C80152D8C4CFF0047EA74 /* PipecatClientIOSOpenAIRealtimeWebrtc */,
+				904C80182D8CA2C00047EA74 /* PipecatClientIOSOpenAIRealtimeWebrtc */,
 			);
 			productName = SimpleChatbot;
 			productReference = 90031FA32C616EE700408370 /* SimpleChatbot.app */;
@@ -316,7 +322,7 @@
 			);
 			mainGroup = 90031F9A2C616EE700408370;
 			packageReferences = (
-				9053D54C2D8C377E00FD4DC0 /* XCRemoteSwiftPackageReference "pipecat-client-ios-openai-realtime-webrtc" */,
+				904C80172D8CA2C00047EA74 /* XCRemoteSwiftPackageReference "pipecat-client-ios-openai-realtime-webrtc" */,
 			);
 			productRefGroup = 90031FA42C616EE700408370 /* Products */;
 			projectDirPath = "";
@@ -369,6 +375,7 @@
 				90ABB9982C738356000D9CC7 /* CustomColors.swift in Sources */,
 				90ABB98E2C735ED6000D9CC7 /* MeetingView.swift in Sources */,
 				90ABB9A32C74E1CE000D9CC7 /* SettingsView.swift in Sources */,
+				904C80132D8C49EE0047EA74 /* OpenAIBotConfig.swift in Sources */,
 				90ABB9932C73820D000D9CC7 /* MicrophoneView.swift in Sources */,
 				90ABB9A82C74EAB1000D9CC7 /* SettingsManager.swift in Sources */,
 				90031FDC2C6D5DD700408370 /* ToastModifier.swift in Sources */,
@@ -706,24 +713,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9053D54C2D8C377E00FD4DC0 /* XCRemoteSwiftPackageReference "pipecat-client-ios-openai-realtime-webrtc" */ = {
+		904C80172D8CA2C00047EA74 /* XCRemoteSwiftPackageReference "pipecat-client-ios-openai-realtime-webrtc" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pipecat-ai/pipecat-client-ios-openai-realtime-webrtc";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
+				minimumVersion = 0.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9053D54A2D8B713900FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc */ = {
+		904C80152D8C4CFF0047EA74 /* PipecatClientIOSOpenAIRealtimeWebrtc */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PipecatClientIOSOpenAIRealtimeWebrtc;
 		};
-		9053D54D2D8C377F00FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc */ = {
+		904C80182D8CA2C00047EA74 /* PipecatClientIOSOpenAIRealtimeWebrtc */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9053D54C2D8C377E00FD4DC0 /* XCRemoteSwiftPackageReference "pipecat-client-ios-openai-realtime-webrtc" */;
+			package = 904C80172D8CA2C00047EA74 /* XCRemoteSwiftPackageReference "pipecat-client-ios-openai-realtime-webrtc" */;
+			productName = PipecatClientIOSOpenAIRealtimeWebrtc;
+		};
+		9053D54A2D8B713900FD4DC0 /* PipecatClientIOSOpenAIRealtimeWebrtc */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = PipecatClientIOSOpenAIRealtimeWebrtc;
 		};
 /* End XCSwiftPackageProductDependency section */
